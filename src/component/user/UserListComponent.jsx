@@ -43,6 +43,10 @@ class UserListComponent extends Component{
             this.setState({
                 message : 'User Deleted Successfully'
             });
+            this.setState({
+                users: this.state.users.filter(user =>
+                    user.id !== userID)
+            });
         }).catch(err =>{
             console.log('deleteUser Error!', err);
         })

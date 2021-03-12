@@ -38,15 +38,15 @@ class AddUserComponent extends Component{
             salary : this.state.salary,
         }
 
-        ApiService.fetchUsers().then(res =>{
-            this.setState({
-                message : user.userName + '님이 성공적으로 등록되었습니다.'
-            })
-            console.log(this.state.message);
-            this.props.history.push('/users');
-        }).catch(err => {
-            console.log('saveUser() Error!!', err);
-        });
+        // ApiService.fetchUsers().then(res =>{
+        //     this.setState({
+        //         message : user.userName + '님이 성공적으로 등록되었습니다.'
+        //     })
+        //     console.log(this.state.message);
+        //     this.props.history.push('/users');
+        // }).catch(err => {
+        //     console.log('saveUser() Error!!', err);
+        // });
 
         ApiService.addUser(user).then(res => {
             this.setState({
